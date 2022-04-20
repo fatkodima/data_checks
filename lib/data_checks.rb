@@ -9,7 +9,10 @@ require "data_checks/ensure_no"
 require "data_checks/notifiers"
 require "data_checks/config"
 require "data_checks/runner"
+require "data_checks/status_printer"
 require "data_checks/version"
+
+require "data_checks/railtie" if defined?(Rails)
 
 module DataChecks
   class << self
