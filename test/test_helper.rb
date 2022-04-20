@@ -6,6 +6,7 @@ require "action_mailer"
 require "data_checks"
 
 require "minitest/autorun"
+require "webmock/minitest"
 
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
 
@@ -47,6 +48,7 @@ class MiniTest::Test # rubocop:disable Style/ClassAndModuleChildren
     DataChecks.config.notifier_options.clear
     DataChecks::CheckRun.delete_all
     ActionMailer::Base.deliveries.clear
+    WebMock.reset!
   end
 
   private
@@ -65,6 +67,7 @@ class MiniTest::Test # rubocop:disable Style/ClassAndModuleChildren
 end
 
 ActionMailer::Base.delivery_method = :test
+WebMock.disable_net_connect!
 
 DataChecks.configure do
   # Swallow everything to be able to test erroring checks.

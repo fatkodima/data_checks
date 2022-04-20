@@ -7,6 +7,8 @@ module DataChecks
     autoload :Notifier
     autoload :EmailDefaultFormatter
     autoload :EmailNotifier
+    autoload :SlackDefaultFormatter
+    autoload :SlackNotifier
     autoload :LoggerDefaultFormatter
     autoload :LoggerNotifier
 
