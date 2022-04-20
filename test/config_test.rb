@@ -76,6 +76,19 @@ class ConfigTest < MiniTest::Test
     end
   end
 
+  def test_ensure_any
+    config.ensure_any :check_name do
+      0
+    end
+
+    io = StringIO.new
+    config.notifier :logger, logdev: io
+
+    run_check(:check_name)
+
+    assert_match(/Check Failing/i, io.string)
+  end
+
   private
     def config
       DataChecks.config

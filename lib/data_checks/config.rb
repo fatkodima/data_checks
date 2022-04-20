@@ -14,6 +14,10 @@ module DataChecks
       add_check(EnsureNo, name, options, block)
     end
 
+    def ensure_any(name, **options, &block)
+      add_check(EnsureMore, name, options.merge(than: 0), block)
+    end
+
     def ensure_more(name, **options, &block)
       add_check(EnsureMore, name, options, block)
     end
