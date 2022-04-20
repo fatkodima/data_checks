@@ -1,0 +1,31 @@
+# frozen_string_literal: true
+
+DataChecks.configure do
+  # ==> Configure notifiers
+  #
+  # Predefined notifiers are :email, :slack, and :logger.
+  #
+  # notifier :email,
+  #   from: "production@company.com",
+  #   to: "developer@company.com",
+  #   formatter_class: DataChecks::Notifiers::EmailDefaultFormatter # default
+
+  # ==> Configure checks
+  #
+  # Available checks are :ensure_no, :ensure_any, :ensure_more, and :ensure_less.
+  #
+  # ensure_no :users_without_emails do
+  #   User.where(email: nil).count
+  # end
+
+  # The Active Support backtrace cleaner that will be used to clean the
+  # backtrace of a check that errors.
+  self.backtrace_cleaner = Rails.backtrace_cleaner
+
+  # The callback to perform when an error occurs in the check.
+  # self.error_handler = ->(error, check_context) do
+  #   Bugsnag.notify(error) do |notification|
+  #     notification.add_metadata(:data_checks, check_context)
+  #   end
+  # end
+end

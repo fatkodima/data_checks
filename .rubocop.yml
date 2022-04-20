@@ -68,6 +68,9 @@ Gemspec/RequiredRubyVersion:
 Gemspec/RequireMFA:
   Enabled: false
 
+Bundler/OrderedGems:
+  Enabled: false
+
 Metrics:
   Enabled: false
 

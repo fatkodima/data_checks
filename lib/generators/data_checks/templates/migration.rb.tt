@@ -1,0 +1,17 @@
+class InstallDataChecks < ActiveRecord::Migration[<%= ar_version %>]
+  def change
+    create_table :data_checks_runs do |t|
+      t.string :name, null: false
+      t.string :status, null: false
+      t.datetime :last_run_at, null: false
+
+      t.string :error_class
+      t.string :error_message
+      t.text :backtrace
+
+      t.timestamps
+
+      t.index :name, unique: true
+    end
+  end
+end
