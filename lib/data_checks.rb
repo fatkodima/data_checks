@@ -3,6 +3,7 @@
 require "data_checks/check_run"
 require "data_checks/check_result"
 require "data_checks/check"
+require "data_checks/ensure_less"
 require "data_checks/ensure_no"
 require "data_checks/notifiers"
 require "data_checks/config"

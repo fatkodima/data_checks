@@ -14,6 +14,10 @@ module DataChecks
       add_check(EnsureNo, name, options, block)
     end
 
+    def ensure_less(name, **options, &block)
+      add_check(EnsureLess, name, options, block)
+    end
+
     def notifier(name, **options)
       name = name.to_s
 
