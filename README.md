@@ -2,6 +2,8 @@
 
 This gem provides a small DSL to check your data for inconsistencies and anomalies.
 
+[![Build Status](https://github.com/fatkodima/data_checks/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fatkodima/data_checks/actions/workflows/test.yml)
+
 ## Installation
 
 Add this line to your application's Gemfile:
