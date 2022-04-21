@@ -41,6 +41,9 @@ Style/Lambda:
 Style/MapToHash:
   Enabled: false
 
+Style/FetchEnvVar:
+  Enabled: false
+
 Lint/MissingSuper:
   Enabled: false
 

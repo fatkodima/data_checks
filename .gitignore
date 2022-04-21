@@ -9,3 +9,4 @@
 
 .byebug_history
 /debug.log*
+gemfiles/**.lock

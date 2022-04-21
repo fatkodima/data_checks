@@ -13,7 +13,7 @@ module DataChecks
           if result >= expected
             passing = false
           end
-        when Enumerable
+        when Enumerable, ActiveRecord::Relation
           count = result.count
           if count >= expected
             passing = false
