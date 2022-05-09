@@ -25,7 +25,13 @@ You could also assume that your data will never get corrupted, and validations d
 
 This gem doesn't aim to replace those tools, but provides something else that could serve a close purpose: *ensure that you work with the data you expect*.
 
-This gem help you to schedule some verifications on your data and get alerts when something is unexpected.
+This gem helps you to schedule some verifications on your data and get alerts when something is unexpected.
+
+`data_checks` can help to catch:
+
+* 🐛 **Bugs due to race conditions** (e.g. user accidentally double clicks a button to delete an email and ends up without emails due to a race condition bug in the app)
+* 🐛 **Invalid persisted data**
+* 🐛 **Unexpected changes in behavior and data** (e.g. too many (too less) of something is created/deleted/imported/enqueued/..., etc)
 
 ## Usage
 
@@ -39,8 +45,15 @@ For example, we expect every image attachment to have previews in 3 sizes. It is
 
 ```ruby
 DataChecks.configure do
+  ensure_no :users_without_emails, tag: "minutely" do
+    User.where.missing(:email_addresses)
+  end
+
   ensure_no :images_without_previews, tag: "hourly" do
-    Attachment.images.joins(:previews).having("COUNT(*) < 3").group(:attachment_id)
+    Attachment.images
+      .left_joins(:previews)
+      .group(:attachment_id)
+      .having("COUNT(previews.id) < 3")
   end
 
   notifier :email,
