@@ -33,6 +33,8 @@ This gem helps you to schedule some verifications on your data and get alerts wh
 * 🐛 **Invalid persisted data**
 * 🐛 **Unexpected changes in behavior and data** (e.g. too many (too less) of something is created/deleted/imported/enqueued/..., etc)
 
+This idea is nicely presented at RailsConf: [RailsConf 2018: The Doctor Is In: Using checkups to find bugs in production by Ryan Laughlin](https://www.youtube.com/watch?v=gEAlhKaK2I4)
+
 ## Usage
 
 A small DSL is provided to help express predicates and an easy way to configure notifications.
