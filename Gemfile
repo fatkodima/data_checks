@@ -5,12 +5,14 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in data_checks.gemspec
 gemspec
 
-gem "actionmailer"
-gem "activerecord"
-gem "railties" # to test generator
+rails_version = "~> 7.0.4"
+gem "actionmailer", rails_version
+gem "activerecord", rails_version
+gem "railties", rails_version # to test generator
+
 gem "rake", "~> 13.0"
 gem "minitest", "~> 5.0"
-gem "rubocop", "~> 1.27"
-gem "rubocop-minitest", "~> 0.19"
+gem "rubocop", "< 2"
+gem "rubocop-minitest", "< 1"
 gem "sqlite3"
-gem "webmock", "~> 3.14"
+gem "webmock", "~> 3.18"

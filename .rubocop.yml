@@ -82,3 +82,6 @@ Minitest/MultipleAssertions:
 
 Minitest/AssertPredicate:
   Enabled: false
+
+Minitest/EmptyLineBeforeAssertionMethods:
+  Enabled: false

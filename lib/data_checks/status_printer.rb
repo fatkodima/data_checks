@@ -31,8 +31,8 @@ module DataChecks
     private
       def print_summary(counts)
         statuses = DataChecks::CheckRun.statuses
-        summary = "Error: #{counts[statuses[:error]]}, "\
-                  "Failing: #{counts[statuses[:failing]]}, "\
+        summary = "Error: #{counts[statuses[:error]]}, " \
+                  "Failing: #{counts[statuses[:failing]]}, " \
                   "Passing: #{counts[statuses[:passing]]}"
         summary += ", Not Ran: #{counts['not_ran']}" if counts["not_ran"] > 0
         @io.puts(summary)
