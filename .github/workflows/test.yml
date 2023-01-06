@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.0
+          ruby-version: 3.2.0
           bundler-cache: true
       - run: bundle exec rubocop
 
@@ -23,6 +23,8 @@ jobs:
           - ruby-version: 2.3.8
             gemfile: gemfiles/rails_42.gemfile
           - ruby-version: 3.1.0
+            gemfile: Gemfile
+          - ruby-version: 3.2.0
             gemfile: Gemfile
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/${{ matrix.gemfile }}
