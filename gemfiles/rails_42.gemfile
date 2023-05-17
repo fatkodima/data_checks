@@ -12,3 +12,6 @@ gem "rake", "~> 13.0"
 gem "minitest", "~> 5.0"
 gem "sqlite3", "~> 1.3.6"
 gem "webmock", "~> 3.14"
+
+# Needs to explicitly downgrade - newer versions raise an error
+gem "loofah", "2.2.3"

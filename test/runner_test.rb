@@ -110,7 +110,7 @@ class RunnerTest < MiniTest::Test
     called = false
     config.error_handler = ->(error, context) do
       called = true
-      assert_equal RuntimeError, error.class
+      assert_instance_of RuntimeError, error
       assert_equal "boom", error.message
       assert_equal "check_name", context[:check_name]
       refute_nil context[:run_at]
