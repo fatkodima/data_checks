@@ -15,7 +15,7 @@ module DataChecks
           end
         # In ActiveRecord <= 4.2 ActiveRecord::Relation is not an Enumerable!
         when Enumerable, ActiveRecord::Relation
-          unless result.empty?
+          unless result.to_a.empty? # loads records for ActiveRecord::Relation
             passing = false
             count = result.size
             entries = result
