@@ -5,23 +5,17 @@ module DataChecks
     private
       def handle_result(result)
         expected = options.fetch(:than)
-        passing = true
 
         case result
         when Numeric
           count = result
-          if result >= expected
-            passing = false
-          end
         when Enumerable, ActiveRecord::Relation
-          count = result.count
-          if count >= expected
-            passing = false
-          end
+          count = result.size
         else
           raise ArgumentError, "Unsupported result: '#{result.class.name}' for 'ensure_less'"
         end
 
+        passing = count < expected
         CheckResult.new(check: self, passing: passing, count: count)
       end
   end
