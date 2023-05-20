@@ -26,6 +26,10 @@ module DataChecks
       add_check(EnsureLess, name, options, block)
     end
 
+    def ensure_equal(name, **options, &block)
+      add_check(EnsureEqual, name, options, block)
+    end
+
     def notifier(name, **options)
       name = name.to_s
 

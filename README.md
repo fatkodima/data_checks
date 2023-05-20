@@ -133,6 +133,7 @@ end
 * `ensure_any` will check that the result of a given block is `> 0`
 * `ensure_more` will check that the result of a given block is `>` than a given number or that it contains more than a given number of items
 * `ensure_less` will check that the result of a given block is `<` than a given number or that it contains less than a given number of items
+* `ensure_equal` will check that the result of a given block is `==` to the given number or that it contains a given number of items
 
 ```ruby
 ensure_no :images_without_previews do

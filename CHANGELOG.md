@@ -1,5 +1,13 @@
 ## master (unreleased)
 
+- Add `ensure_equal` check method
+
+    ```ruby
+    ensure_equal :featured_projects, to: 100 do
+      FeaturedProject.count
+    end
+    ```
+
 ## 0.1.1 (2022-11-26)
 
 - Do not prematurely load `ActiveRecord::Base`

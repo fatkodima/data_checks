@@ -12,6 +12,7 @@ module DataChecks
   autoload :CheckResult
   autoload :CheckRun
   autoload :Config
+  autoload :EnsureEqual
   autoload :EnsureLess
   autoload :EnsureMore
   autoload :EnsureNo
