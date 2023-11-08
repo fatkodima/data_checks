@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class StatusPrinterTest < MiniTest::Test
+class StatusPrinterTest < Minitest::Test
   def setup
     DataChecks.configure do
       ensure_no :failing_check do

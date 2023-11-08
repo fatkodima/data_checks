@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class RunnerTest < MiniTest::Test
+class RunnerTest < Minitest::Test
   def test_run_checks
     io = StringIO.new
     config.notifier :logger, logdev: io

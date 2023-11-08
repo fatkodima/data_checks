@@ -2,7 +2,7 @@
 
 require_relative "test_helper"
 
-class EnsureEqualTest < MiniTest::Test
+class EnsureEqualTest < Minitest::Test
   def teardown
     super
     User.delete_all

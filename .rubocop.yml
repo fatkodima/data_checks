@@ -44,6 +44,9 @@ Style/MapToHash:
 Style/FetchEnvVar:
   Enabled: false
 
+Style/HashSyntax:
+  Enabled: false
+
 Lint/MissingSuper:
   Enabled: false
 
@@ -63,6 +66,9 @@ Layout/MultilineMethodCallIndentation:
   Enabled: false
 
 Layout/HashAlignment:
+  Enabled: false
+
+Naming/BlockForwarding:
   Enabled: false
 
 Gemspec/RequiredRubyVersion:

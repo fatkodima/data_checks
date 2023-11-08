@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class EmailNotifierTest < MiniTest::Test
+class EmailNotifierTest < Minitest::Test
   def setup
     config.notifier :email, from: "no-reply@example.com", to: "user@example.com"
   end

@@ -2,7 +2,7 @@
 
 require_relative "test_helper"
 
-class ConfigTest < MiniTest::Test
+class ConfigTest < Minitest::Test
   def test_adding_duplicate_check
     config.ensure_no :check_name
 

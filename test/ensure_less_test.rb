@@ -2,7 +2,7 @@
 
 require_relative "test_helper"
 
-class EnsureLessTest < MiniTest::Test
+class EnsureLessTest < Minitest::Test
   def teardown
     super
     User.delete_all

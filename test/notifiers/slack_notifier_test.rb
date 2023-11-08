@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class SlackNotifierTest < MiniTest::Test
+class SlackNotifierTest < Minitest::Test
   def setup
     config.notifier :slack, webhook_url: "https://hooks.slack.com/services/abc"
   end

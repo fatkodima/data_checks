@@ -42,7 +42,7 @@ end
 class User < ActiveRecord::Base
 end
 
-class MiniTest::Test # rubocop:disable Style/ClassAndModuleChildren
+class Minitest::Test # rubocop:disable Style/ClassAndModuleChildren
   def teardown
     DataChecks.config.checks.clear
     DataChecks.config.notifier_options.clear

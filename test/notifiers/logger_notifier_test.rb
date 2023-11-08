@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class LoggerNotifierTest < MiniTest::Test
+class LoggerNotifierTest < Minitest::Test
   def setup
     config.notifier :logger
   end
