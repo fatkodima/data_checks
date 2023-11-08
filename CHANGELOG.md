@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+## 0.2.0 (2023-11-09)
+
 - Add `ensure_equal` check method
 
     ```ruby
