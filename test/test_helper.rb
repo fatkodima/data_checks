@@ -75,9 +75,9 @@ DataChecks.configure do
 end
 
 module TestRunWarningFilter
-  # Had some trouble with spurious warnings output in mail v2.8.1 gem. Ignore that, to focus output.
+  # Ignore warnings output from mail v2.8.1 gem.
   def warn(message, category: nil, **kwargs)
-    if %r{gems/mail-.+/lib/}.match?(message)
+    if message =~ /gems\/mail-/
       # ignore
     else
       super
@@ -85,4 +85,3 @@ module TestRunWarningFilter
   end
 end
 Warning.extend TestRunWarningFilter
-
