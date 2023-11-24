@@ -47,6 +47,10 @@ Style/FetchEnvVar:
 Style/HashSyntax:
   Enabled: false
 
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  AllowInnerSlashes: true
+
 Lint/MissingSuper:
   Enabled: false
 

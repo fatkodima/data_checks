@@ -73,3 +73,17 @@ DataChecks.configure do
   # Swallow everything to be able to test erroring checks.
   self.error_handler = ->(error, context) {}
 end
+
+if defined?(Warning)
+  module TestRunWarningFilter
+    # Ignore warnings output from mail v2.8.1 gem.
+    def warn(message, category: nil, **kwargs)
+      if message =~ /gems\/mail-/
+        # ignore
+      else
+        super
+      end
+    end
+  end
+  Warning.extend TestRunWarningFilter
+end
