@@ -22,13 +22,12 @@ class InstallGeneratorTest < Rails::Generators::TestCase
 
     assert_file("config/initializers/data_checks.rb") do |content|
       assert_includes content, "DataChecks.configure do"
-      %w[
-        :ensure_no
-        :ensure_any
-        :ensure_more
-        :ensure_less
-        :ensure_equal
-      ].each do |dsl_method_name|
+      expected_dsl_methods = DataChecks::Config.new
+        .public_methods
+        .select { |dsl_method_name| dsl_method_name.to_s.start_with?("ensure_") }
+        .map(&:to_s)
+
+      expected_dsl_methods.each do |dsl_method_name|
         assert_includes content, dsl_method_name
       end
     end
