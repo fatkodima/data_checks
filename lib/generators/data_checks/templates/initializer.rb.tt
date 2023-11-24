@@ -12,7 +12,8 @@ DataChecks.configure do
 
   # ==> Configure checks
   #
-  # Available checks are :ensure_no, :ensure_any, :ensure_more, and :ensure_less.
+  # Available checks are :ensure_no, :ensure_any, :ensure_more, :ensure_less,
+  # and :ensure_equal.
   #
   # ensure_no :users_without_emails do
   #   User.where(email: nil).count
