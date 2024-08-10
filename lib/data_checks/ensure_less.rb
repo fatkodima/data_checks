@@ -9,7 +9,7 @@ module DataChecks
         case result
         when Numeric
           count = result
-        when Enumerable, ActiveRecord::Relation
+        when Enumerable
           count = result.size
         else
           raise ArgumentError, "Unsupported result: '#{result.class.name}' for 'ensure_less'"

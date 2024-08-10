@@ -5,7 +5,7 @@ module DataChecks
     self.table_name = :data_checks_runs
 
     STATUSES = [:passing, :failing, :error]
-    enum status: STATUSES.map { |status| [status, status.to_s] }.to_h
+    enum :status, STATUSES.index_with(&:to_s)
 
     serialize :backtrace
 

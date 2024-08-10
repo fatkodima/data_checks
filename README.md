@@ -4,6 +4,11 @@ This gem provides a small DSL to check your data for inconsistencies and anomali
 
 [![Build Status](https://github.com/fatkodima/data_checks/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fatkodima/data_checks/actions/workflows/test.yml)
 
+## Requirements
+
+- ruby 3.0+
+- activerecord 7.0+
+
 ## Installation
 
 Add this line to your application's Gemfile:

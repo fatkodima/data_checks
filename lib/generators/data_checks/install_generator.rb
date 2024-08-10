@@ -10,7 +10,7 @@ module DataChecks
     source_root File.expand_path("templates", __dir__)
 
     def create_migration_file
-      migration_template("migration.rb", File.join(migrations_dir, "install_data_checks.rb"))
+      migration_template("migration.rb", File.join(db_migrate_path, "install_data_checks.rb"))
     end
 
     def copy_initializer_file
@@ -19,11 +19,7 @@ module DataChecks
 
     private
       def start_after
-        self.class.next_migration_number(migrations_dir)
-      end
-
-      def migrations_dir
-        ar_version >= 5.1 ? db_migrate_path : "db/migrate"
+        self.class.next_migration_number(db_migrate_path)
       end
 
       def ar_version

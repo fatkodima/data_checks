@@ -37,10 +37,6 @@ Style/NumericPredicate:
 Style/Lambda:
   EnforcedStyle: literal
 
-# only for ruby 2.6+
-Style/MapToHash:
-  Enabled: false
-
 Style/FetchEnvVar:
   Enabled: false
 

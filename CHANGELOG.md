@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+- Drop support for older activerecord and ruby versions
+
 ## 0.2.0 (2023-11-09)
 
 - Add `ensure_equal` check method
