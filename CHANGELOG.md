@@ -1,5 +1,7 @@
 ## master (unreleased)
 
+## 0.3.0 (2024-08-10)
+
 - Drop support for older activerecord and ruby versions
 
 ## 0.2.0 (2023-11-09)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    data_checks (0.2.0)
+    data_checks (0.3.0)
       activerecord (>= 7.0)
 
 GEM
